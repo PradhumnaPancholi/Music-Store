@@ -1,0 +1,24 @@
+﻿@model IEnumerable<music_store.Models.Album>
+
+@{
+    ViewBag.Title = "Albums";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Albums</h2>
+
+<ul>
+    @foreach (var a in Model)
+    {
+        <li>@a.Title</li>
+    }
+</ul>
+
+
+@*<ul>
+        @foreach (var a in ViewBag.albums)
+        {
+            <li>@a.Title</li>
+        }
+    </ul>*@
+
