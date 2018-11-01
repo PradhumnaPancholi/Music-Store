@@ -27,6 +27,8 @@ namespace music_store.Models
         public string Title { get; set; }
 
         [Column(TypeName = "numeric")]
+        [Range(0, 100000, ErrorMessage = "Not a valid price")]
+        [DataType(DataType.Currency )]
         public decimal Price { get; set; }
 
         [StringLength(1024)]
