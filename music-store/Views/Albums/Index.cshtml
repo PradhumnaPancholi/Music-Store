@@ -10,7 +10,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table sortable ">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Artist.Name)
@@ -45,7 +45,7 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AlbumArtUrl)
+            <img src="@item.AlbumArtUrl" alt="@item.Title" />
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |

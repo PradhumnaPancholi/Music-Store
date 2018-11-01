@@ -30,6 +30,7 @@ namespace music_store.Models
         public decimal Price { get; set; }
 
         [StringLength(1024)]
+        [Display(Name = "Artist cover")]
         public string AlbumArtUrl { get; set; }
 
         public virtual Artist Artist { get; set; }

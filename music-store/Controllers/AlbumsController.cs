@@ -10,11 +10,13 @@ using music_store.Models;
 
 namespace music_store.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class AlbumsController : Controller
     {
         private MusicStoreModel db = new MusicStoreModel();
 
         // GET: Albums
+      
         public ActionResult Index()
         {
             var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);
@@ -22,6 +24,7 @@ namespace music_store.Controllers
         }
 
         // GET: Albums/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -98,7 +101,7 @@ namespace music_store.Controllers
             return View(album);
         }
 
-        // GET: Albums/Delete/5
+        // GET: Albums/Delete/5   
         public ActionResult Delete(int? id)
         {
             if (id == null)

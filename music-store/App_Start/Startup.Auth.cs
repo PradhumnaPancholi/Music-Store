@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using music_store.Models;
+using System.Configuration;
 
 namespace music_store
 {
@@ -58,11 +59,11 @@ namespace music_store
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = ConfigurationManager.AppSettings["GoogleClientId"],
+                ClientSecret = ConfigurationManager.AppSettings["GoogleClientSecret"]
+            });
         }
     }
 }
