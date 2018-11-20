@@ -84,5 +84,17 @@ namespace fri_pm_music_store.Controllers
 
             return View(CartItems);
         }
+
+        //GET : /Store/RemoveFromCart/:id
+        public ActionResult RemoveFromCart(int id)
+        {
+            //find and delete item from cart//
+            Cart CartItem = db.Carts.SingleOrDefault(c => c.RecordId == id);
+            db.Carts.Remove(CartItem);
+            db.SaveChanges();
+
+            //reload the page//
+            return RedirectToAction("ShoppingCart");
+        }
     }
 }
