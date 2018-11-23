@@ -23,9 +23,11 @@ namespace music_store.Models
         public string Username { get; set; }
 
         [StringLength(160)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [StringLength(160)]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [StringLength(70)]
@@ -38,6 +40,7 @@ namespace music_store.Models
         public string State { get; set; }
 
         [StringLength(10)]
+        [Display(Name = "Postal Code")]
         public string PostalCode { get; set; }
 
         [StringLength(40)]

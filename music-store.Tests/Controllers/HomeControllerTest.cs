@@ -39,6 +39,19 @@ namespace music_store.Tests.Controllers
         }
 
         [TestMethod]
+        public void AboutLoadsView()
+        {
+            //arrange//
+            HomeController controller = new HomeController();
+
+            //act//
+            ViewResult result = controller.About() as ViewResult;
+
+            //assert//
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
         public void Contact()
         {
             // Arrange
@@ -50,5 +63,34 @@ namespace music_store.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void Galley()
+        {
+            //arrange//
+            HomeController controller = new HomeController();
+
+            //act//
+            ViewResult result = controller.Gallery() as ViewResult;
+
+            //assert//
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ContactViewBagValid()
+        {
+            //arrange//
+            HomeController controller = new HomeController();
+
+            //act//
+            ViewResult viewResult = controller.Contact() as ViewResult;
+
+            //assert//
+            Assert.AreEqual("Your contact page.", viewResult.ViewBag.Message);
+        }
+
+
+        
     }
 }
